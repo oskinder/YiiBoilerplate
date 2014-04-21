@@ -87,8 +87,6 @@ regarding code quality, all inside the `reports` directory.
         <exec executable="bin/phpunit" dir="." passthru="true">
             <arg value="--coverage-clover" />
             <arg value="build/logs/clover.xml" />
-            <arg value="--coverage-crap4j" />
-            <arg value="build/logs/crap4j.xml" />
             <arg value="--coverage-html" />
             <arg value="build/coverage" />
             <arg value="--log-junit" />

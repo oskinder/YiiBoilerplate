@@ -114,7 +114,7 @@ regarding code quality, all inside the `reports` directory.
             <arg value="--log-pmd" />
             <arg value="build/logs/phpcpd.xml" />
             <arg value="--exclude" />
-            <arg value="common/lib/Yii/messages/*" />
+            <arg value="messages" />
             <arg value="--min-lines" />
             <arg value="4" />
             <arg value="--fuzzy" />

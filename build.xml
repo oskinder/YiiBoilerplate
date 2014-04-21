@@ -13,7 +13,7 @@ regarding code quality, all inside the `reports` directory.
 
     <import file="carcass/filesets.xml" />
 
-    <target name="all" depends="doc, check" />
+    <target name="all" depends="check, doc" />
     <target name="doc" depends="apigen" />
     <target name="check" depends="prepare, phploc, coverage, pdepend, phpcpd, phpmd, phpcs, codebrowser" />
 

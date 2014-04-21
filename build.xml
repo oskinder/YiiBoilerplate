@@ -136,6 +136,7 @@ regarding code quality, all inside the `reports` directory.
 
     <target name="codebrowser" depends="prepare-reports-dir">
         <exec executable="bin/phpcb" dir="." passthru="true">
+            <arg value="--exclude=common/lib/Yii/messages/*" />
             <arg value="--log=reports" />
             <arg value="--extensions=php" />
             <arg value="--output=build/codebrowser" />

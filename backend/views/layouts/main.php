@@ -30,14 +30,16 @@
 
 <!-- CONTENT WRAPPER BEGIN -->
 <div class="container">
-    <?php if (isset($this->breadcrumbs)): ?>
+    <?php
+    if (isset($this->breadcrumbs)): ?>
         <?php $this->widget(
             'bootstrap.widgets.TbBreadcrumbs',
             array(
                 'links' => $this->breadcrumbs,
             )
-        ); ?>
-    <?php endif ?>
+        );
+    endif;
+    ?>
 
     <div class="row">
 

@@ -88,7 +88,7 @@ class BackendLoginForm extends CFormModel
 	 * @param string
      * @param array
 	 */
-	public function authenticate($attribute, $params)
+	public function authenticate()
     {
         if ($this->hasErrors())
             return;

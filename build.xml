@@ -15,16 +15,20 @@ regarding code quality, all inside the `reports` directory.
 
     <target name="all" depends="doc, check" />
     <target name="doc" depends="apigen" />
-    <target name="check" depends="phploc, coverage, pdepend, phpcpd, phpmd, phpcs, codebrowser" />
+    <target name="check" depends="prepare, phploc, coverage, pdepend, phpcpd, phpmd, phpcs, codebrowser" />
 
     <php expression="include('vendor/autoload.php')"/>
 
-    <target name="update-composer">
-        <composer command="self-update"></composer>
+    <target name="clean" description="Cleanup build artifacts">
+        <delete dir="${basedir}/build/api"/>
+        <delete dir="${basedir}/build/coverage"/>
+        <delete dir="${basedir}/build/logs"/>
     </target>
 
-    <target name="install-composer">
-        <composer command="install"></composer>
+    <target name="prepare" depends="clean" description="Prepare for build">
+        <mkdir dir="${basedir}/build/api"/>
+        <mkdir dir="${basedir}/build/coverage"/>
+        <mkdir dir="${basedir}/build/logs"/>
     </target>
 
     <target name="phploc" depends="prepare-reports-dir">

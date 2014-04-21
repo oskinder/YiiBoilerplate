@@ -36,10 +36,13 @@ $this->breadcrumbs = ['Login'];
     <?= $form->passwordFieldRow($model, 'password', array('class' => 'span3')); ?>
     <?= $form->checkBoxRow($model, 'rememberMe'); ?>
 
-    <?php if ($model->isCaptchaRequired()): ?>
+    <?php
+    if ($model->isCaptchaRequired()): ?>
         <?php $this->widget('CCaptcha'); ?>
         <?= $form->textField($model, 'verifyCode'); ?>
-    <?php endif; ?>
+    <?php
+    endif;
+    ?>
 
     <div class="form-actions">
         <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType' => 'submit', 'type' => 'primary', 'label' => 'Submit', 'icon' => 'ok')); ?>

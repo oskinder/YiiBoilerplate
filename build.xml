@@ -68,6 +68,8 @@ regarding code quality, all inside the `reports` directory.
         <exec executable="bin/phpunit" dir="." passthru="true">
             <arg value="--coverage-clover" />
             <arg value="reports/clover.xml" />
+            <arg value="--coverage-crap4j" />
+            <arg value="reports/crap4j.xml" />
             <arg value="--coverage-html" />
             <arg value="reports/coverage" />
         </exec>

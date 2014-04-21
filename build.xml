@@ -59,7 +59,7 @@ regarding code quality, all inside the `reports` directory.
     </target>
 
     <target name="prepare-reports-dir">
-        <mkdir dir="reports" />
+        <mkdir dir="build" />
     </target>
 
     <target name="pdepend" depends="prepare-reports-dir">
@@ -72,7 +72,7 @@ regarding code quality, all inside the `reports` directory.
 
             <arg value="--summary-xml=build/logs/pdepend.xml" />
 
-            <arg value="--jdepend-xml==build/logs/jdepend.xml" />
+            <arg value="--jdepend-xml=build/logs/jdepend.xml" />
 
             <arg value="--jdepend-chart=build/logs/jdepend.svg" />
 
@@ -83,7 +83,7 @@ regarding code quality, all inside the `reports` directory.
     </target>
 
     <target name="coverage" depends="prepare-reports-dir">
-        <delete dir="reports/coverage" />
+        <delete dir="build/coverage" />
         <exec executable="bin/phpunit" dir="." passthru="true">
             <arg value="--coverage-clover" />
             <arg value="build/logs/clover.xml" />
@@ -128,7 +128,6 @@ regarding code quality, all inside the `reports` directory.
             <arg value="--extensions=php" />
             <!-- Tab-width param is quite important, phpcs will treat tabs as single spaces without it. -->
             <arg value="--tab-width=4" />
-
             <arg value="--standard=carcass/ruleset.xml" />
             <arg value="--report-checkstyle=build/logs/checkstyle.xml" />
 
